@@ -133,7 +133,10 @@ legend, .etiket { font: 700 .9rem/1.2 var(--gostr); margin-bottom: .6rem; displa
 .cip span { display: inline-flex; align-items: center; min-height: 44px; padding: 0 1.05rem; border-radius: 999px; background: var(--yuzey2); font-weight: 650; font-size: .95rem; transition: background-color .15s, color .15s, transform .12s; }
 .bolum.ton .cip span, .form-kart .cip span { background: var(--yuzey); }
 .bolum:not(.ton) .form-kart .cip span { background: var(--zemin); }
-.cip input:checked + span { background: var(--sari); color: var(--sari-ustu); }
+/* Seçili çip her zeminde sarı: zemin kuralları (.bolum … .cip span) daha özgül olduğundan seçiciler onlarla eşleştirildi. */
+.cip input:checked + span,
+.bolum.ton .cip input:checked + span,
+.bolum .form-kart .cip input:checked + span { background: var(--sari); color: var(--sari-ustu); }
 .cip input:active + span { transform: scale(.97); }
 .cip input:focus-visible + span { outline: 3px solid var(--mavi); outline-offset: 2px; }
 .alan, textarea { width: 100%; font: 500 1rem/1.5 var(--gostr); color: var(--murekkep); background: var(--yuzey); border: 2px solid transparent; border-radius: var(--r-s); padding: .85rem 1rem; transition: border-color .15s, background-color .15s; }
